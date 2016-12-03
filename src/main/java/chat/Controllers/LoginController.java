@@ -22,10 +22,9 @@ public class LoginController {
         return mov;
     }
     @RequestMapping(value = "/chat", method = RequestMethod.POST)
-    public ModelAndView chatGo()//@ModelAttribute(String userName) String name)
+    public ModelAndView chatGo()
     {
         ModelAndView modelAndView = new ModelAndView("chat");
-       // modelAndView.addObject(User user);
         return modelAndView;
     }
 }
