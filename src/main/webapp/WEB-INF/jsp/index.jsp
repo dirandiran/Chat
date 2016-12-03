@@ -8,9 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Login</title>
 </head>
 <body>
-Hello World!!!
+<form method="post" action="/chat">
+    Login: <input type="text" name="userLogin" id="userLogin"/> <br />
+           <input type="submit" name="goButton" value="Go" />
+</form>
+
 </body>
 </html>
