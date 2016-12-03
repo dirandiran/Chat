@@ -25,4 +25,9 @@ public class Message {
     public void setMessageData(Date messageData) {
         this.messageData = messageData;
     }
+
+    public Message(String message, Date messageData) {
+        this.message = message;
+        this.messageData = messageData;
+    }
 }

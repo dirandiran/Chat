@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MessageDTO {
     private String user;
-    private Message message;
+    private String message;
 
     public String getUser() {
         return user;
@@ -18,11 +18,11 @@ public class MessageDTO {
         this.user = user;
     }
 
-    public Message getMessage() {
+    public String getMessage() {
         return message;
     }
 
-    public void setMessage(Message message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 }

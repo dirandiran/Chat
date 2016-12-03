@@ -1,4 +1,7 @@
-package chat;
+package chat.api;
+
+import chat.Message;
+import chat.MessageDTO;
 
 import java.util.Map;
 import java.util.Set;
@@ -8,7 +11,7 @@ import java.util.Set;
  */
 public interface MessageProvider {
 
-    Set<Map.Entry<String,Message>> getAll();
+    Set<Map.Entry<String, Message>> getAll();
 
     void putMessage(MessageDTO messageDTO);
 
