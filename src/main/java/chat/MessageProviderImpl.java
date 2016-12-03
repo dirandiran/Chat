@@ -12,7 +12,7 @@ import java.util.Set;
  */
 @Component
 @Scope("singleton")
-public class MessageProviderImpl {
+public class MessageProviderImpl implements MessageProvider {
 
     Map<String, Message> chatMessages;
 
