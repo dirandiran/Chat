@@ -1,8 +1,12 @@
-package chat;
+package chat.impl;
 
+import chat.Message;
+import chat.MessageDTO;
+import chat.api.MessageProvider;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -25,6 +29,6 @@ public class MessageProviderImpl implements MessageProvider {
     }
 
     public void putMessage(MessageDTO messageDTO) {
-        chatMessages.put(messageDTO.getUser(), messageDTO.getMessage());
+        chatMessages.put(messageDTO.getUser(), new Message(messageDTO.getMessage(), new Date()));
     }
 }

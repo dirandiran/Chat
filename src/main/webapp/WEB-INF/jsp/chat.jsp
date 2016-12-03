@@ -9,13 +9,40 @@
 <html>
 <head>
     <title>Chat</title>
+    <script   src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#sendMessage').click(function () {
+                var message = $('#message').val();
+                var user = $('#nickName').val();
+                var jsonString = JSON.stringify({
+                    user : user,
+                    message : message
+                });
+                $.ajax({
+                    type: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                url: '/chat/ajax',
+                        contentType: "application/json; charset=utf-8",
+                        data: jsonString,
+                        async: false,
+                        cache: false,
+                        processData:false,
+                        success: function (result) {}
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 
 <br />
 <h4> Hello ${name}! Welcome to ChatRoom </h4>
-
-<textarea id="chatPlace" name="chatPlace" cols="100" rows="30">
+<input type = "hidden" value="${name}" id="nickName"/>
+<textarea id="chatPlace" name="chatPlace" cols="100" rows="30" readonly>
     ${message.messageData}
     ${message.message}
 </textarea>

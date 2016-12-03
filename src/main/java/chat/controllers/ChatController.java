@@ -1,12 +1,15 @@
-package chat.Controllers;
+package chat.controllers;
 
 import chat.Message;
 import chat.MessageDTO;
-import chat.MessageProvider;
+import chat.api.MessageProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Troublemaker on 03.12.2016.
@@ -14,8 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/chat")
 public class ChatController {
+
     @Autowired
     MessageProvider messageProvider;
+
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView showChat(){
         ModelAndView modelAndView = new ModelAndView("chat");
@@ -33,9 +38,11 @@ public class ChatController {
 
     @ResponseBody
     @RequestMapping(value = "/ajax", method = RequestMethod.POST)
-    public Message generateMessageDTO(@RequestBody MessageDTO messageDTO){
+    public Set<Map.Entry<String,Message>> generateMessageDTO(@RequestBody MessageDTO messageDTO){
 
-        return new Message();
+        messageProvider.putMessage(messageDTO);
+
+        return messageProvider.getAll();
     }
 
 }
