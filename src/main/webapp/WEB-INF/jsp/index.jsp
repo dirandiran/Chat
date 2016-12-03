@@ -12,7 +12,7 @@
 </head>
 <body>
 <form method="post" action="/chat">
-    Login: <input type="text" name="userLogin" id="userLogin"/> <br />
+    Login: <input type="text" name="name" id="name"/> <br />
            <input type="submit" name="goButton" value="Go" />
 </form>
 

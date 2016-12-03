@@ -11,14 +11,17 @@
     <title>Chat</title>
 </head>
 <body>
+
+<br />
+<h4> Hello ${name}! Welcome to ChatRoom </h4>
+
+<textarea id="chatPlace" name="chatPlace" cols="100" rows="30">
+    ${message.messageData}
+    ${message.message}
+</textarea>
+<br/>
     <input type="text" name="message" id="message"/> <br/>
     <button type="button" name="sendMessage" id="sendMessage"> send </button> <br/>
-<br />
-    <h4> ChatCanvas </h4>
 
-        <textarea id="chatPlace" name="chatPlace" cols="200" rows="30">
-
-        </textarea>
-<br/>
 </body>
 </html>
