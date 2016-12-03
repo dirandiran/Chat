@@ -1,21 +1,15 @@
 package chat;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 /**
  * Created by pavel on 03.12.16.
  */
-public class MessageProvider {
+public interface MessageProvider {
 
-    Map<String, Message> chatMessages;
+    Set<Map.Entry<String,Message>> getAll();
 
-    public MessageProvider() {
-        this.chatMessages = new HashMap<>();
-    }
+    void putMessage(MessageDTO messageDTO);
 
-    public Set<Map.Entry<String,Message>> getAll(){
-        return chatMessages.entrySet();
-    }
 }
